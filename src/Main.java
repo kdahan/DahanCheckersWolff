@@ -12,12 +12,14 @@ public class Main extends JPanel {
 
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-        System.out.println("TEST");
+
+
+
     }
 
     public static void main(String[] args) {
         //The JFrame class represents the window that holds the graphics
-        JFrame window = new JFrame("Images!");
+        JFrame window = new JFrame("sqyae!");
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         window.setBounds(0, 0, 800, 800 + 22); //(x, y, w, h) 22 due to title bar.
 
