@@ -12,7 +12,7 @@ public class Main extends JPanel {
 
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-
+        System.out.println("TEST");
     }
 
     public static void main(String[] args) {
