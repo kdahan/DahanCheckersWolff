@@ -3,6 +3,8 @@ import java.awt.*;
 
 public class Main extends JPanel {
 
+    public Square[][] board;
+
     public Main(int w, int h){
         setSize(w, h);
 
@@ -17,7 +19,7 @@ public class Main extends JPanel {
         //The JFrame class represents the window that holds the graphics
         JFrame window = new JFrame("Images!");
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        window.setBounds(0, 0, 600, 800 + 22); //(x, y, w, h) 22 due to title bar.
+        window.setBounds(0, 0, 800, 800 + 22); //(x, y, w, h) 22 due to title bar.
 
         Main panel = new Main(600, 800);
 
