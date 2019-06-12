@@ -26,6 +26,7 @@ public class Board {
             for (Square c : r) {
 
                 c.draw(g2);
+                //help me plz
 
             }
         }
