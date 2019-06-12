@@ -10,9 +10,9 @@ public class Board {
 
         for (int r = 0; r < board.length; r++) {
             for (int c = 0; c < board[0].length; c++) {
-                if(r + c % 2 == 0)
+                if((r + c) % 2 == 0)
 
-                    board[r][c] = new Square(r, c);
+                    board[r][c] = new Square(r * 100, c * 100);
 
             }
 
@@ -22,13 +22,14 @@ public class Board {
 
     public void draw(Graphics2D g2) {
 
-        for (Square[] r : board) {
-            for (Square c : r) {
-                if(c != null)
-                    c.draw(g2);
-                //help me plz
+        for (int r = 0; r < board.length; r++) {
+            for (int c = 0; c < board[0].length; c++) {
+                if(board[r][c] != null) {
+                    board[r][c].draw(g2);
+                }
 
             }
+
         }
 
     }

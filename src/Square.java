@@ -4,10 +4,10 @@ public class Square {
 
     private int width, height, x, y;
 
-    public Square(int ecks, int why){
+    public Square(int x, int y){
 
-        ecks = x;
-        why = y;
+        this.x = x;
+        this.y = y;
 
         width = 800 / 8;
         height = 800 / 8;
