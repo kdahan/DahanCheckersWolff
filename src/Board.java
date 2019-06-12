@@ -20,10 +20,10 @@ public class Board {
 
     }
 
-    public void draw(Graphics2D g2){
+    public void draw(Graphics2D g2) {
 
-        for(Square[] r: board){
-            for(Square c: r){
+        for (Square[] r : board) {
+            for (Square c : r) {
 
                 c.draw(g2);
 
