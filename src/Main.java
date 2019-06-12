@@ -21,8 +21,6 @@ public class Main extends JPanel {
 
         board.draw(g2);
 
-        repaint();
-
     }
 
     public static void main(String[] args) {

@@ -24,8 +24,8 @@ public class Board {
 
         for (Square[] r : board) {
             for (Square c : r) {
-
-                c.draw(g2);
+                if(c != null)
+                    c.draw(g2);
                 //help me plz
 
             }
