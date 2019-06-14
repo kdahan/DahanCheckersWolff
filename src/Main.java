@@ -7,12 +7,36 @@ public class Main extends JPanel{
 
     private int x, y;
     private Board board;
+    private Checker[][] black;
+    private int[][] boardFull;
 
     public Main(int w, int h){
         setSize(w, h);
 
         x = 0;
         y = 0;
+
+        black = new Checker[8][8];
+        boardFull = new int[8][8];
+
+        for (int r = 0; r < black.length; r++) {
+            for (int c = 0; c < black[0].length; c++) {
+                if ((r + c) % 2 != 0)
+                    black[r][c] = new Checker(r * 100, c * 100);
+                boardFull[r][c] = 1;
+
+            }
+
+        }
+
+        for(int r = 0; r < black.length; r++) {
+            for (int c = 0; c < black[0].length; c++) {
+                if ((r + c) % 2 != 0)
+                    black[r][c] = new Checker((r * 100), 800 - c * 100);
+                boardFull[r][c] = 2;
+            }
+        }
+
 
         board = new Board();
         addMouseListener(new MouseListener() {
@@ -24,10 +48,18 @@ public class Main extends JPanel{
             @Override
             public void mousePressed(MouseEvent e) {
 
+                int ecks = e.getX() % 100;
+                int why = e.getY() % 100;
+
+
+
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
+
+                int ex = e.getX();
+                int wy = e.getY();
 
             }
 
@@ -49,6 +81,24 @@ public class Main extends JPanel{
 
         board.draw(g2);
 
+        for (int r = 0; r < black.length; r++) {
+            for (int c = 0; c < black[0].length; c++) {
+                if (black[r][c] != null)
+                    black[r][c].drawRed(g2);
+
+            }
+
+        }
+
+        for (int r = 0; r < black.length; r++) {
+            for (int c = 0; c < black[0].length; c++) {
+                if (black[r][c] != null)
+                    black[r][c].drawBlack(g2);
+
+            }
+
+        }
+
     }
 
     public static void main(String[] args) {
@@ -64,7 +114,7 @@ public class Main extends JPanel{
 
         window.add(panel);
         window.setVisible(true);
-//        window.setResizable(false);
+        window.setResizable(false);
     }
 
 }
