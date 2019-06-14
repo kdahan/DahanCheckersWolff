@@ -21,21 +21,18 @@ public class Main extends JPanel{
 
         for (int r = 0; r < black.length; r++) {
             for (int c = 0; c < black[0].length; c++) {
-                if ((r + c) % 2 != 0)
-                    black[r][c] = new Checker(r * 100, c * 100);
-                boardFull[r][c] = 1;
+                if ((r + c) % 2 != 0) {
+                    if (r <= 2)
+                        black[r][c] = new Checker(c * 100, r * 100);
 
+                    if (r >= 5)
+                        black[r][c] = new Checker(c * 100, r * 100);
+                    boardFull[r][c] = 1;
+                }
             }
 
         }
 
-        for(int r = 0; r < black.length; r++) {
-            for (int c = 0; c < black[0].length; c++) {
-                if ((r + c) % 2 != 0)
-                    black[r][c] = new Checker((r * 100), 800 - c * 100);
-                boardFull[r][c] = 2;
-            }
-        }
 
 
         board = new Board();
@@ -84,7 +81,8 @@ public class Main extends JPanel{
         for (int r = 0; r < black.length; r++) {
             for (int c = 0; c < black[0].length; c++) {
                 if (black[r][c] != null)
-                    black[r][c].drawRed(g2);
+                    if (r <= 2)
+                        black[r][c].drawRed(g2);
 
             }
 
@@ -93,7 +91,8 @@ public class Main extends JPanel{
         for (int r = 0; r < black.length; r++) {
             for (int c = 0; c < black[0].length; c++) {
                 if (black[r][c] != null)
-                    black[r][c].drawBlack(g2);
+                    if(r >= 5)
+                        black[r][c].drawBlack(g2);
 
             }
 
